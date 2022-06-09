@@ -34,7 +34,6 @@ svg {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 21px;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -57,4 +56,12 @@ svg {
   outline: none;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
     border-color 0.3s ease-in-out;
+}
+
+.text-wrap {
+  white-space: normal;
+}
+
+.dropdown--visible {
+  opacity: 1;
 }
