@@ -19,8 +19,8 @@
       margin-right: 57px;
       padding: 0;
       padding-top: 1px;
-      min-width: 90px;
-      min-height: 42px;
+      width: 90px;
+      height: 42px;
 
       &:focus {
         border-color: $color-secondary-blue;
@@ -107,9 +107,11 @@
       list-style-type: none;
     }
     &-link {
-      padding: 1px;
-      width: 20px;
-      height: 20px;
+      padding: 5px;
+      width: 26px;
+      height: 26px;
+      border: none;
+      border-radius: 0;
     }
   }
 
@@ -312,7 +314,84 @@
   }
 }
 
+.burger {
+  display: none;
+
+  &__menu {
+    display: none;
+  }
+}
+
 .dropdown--visible {
   display: grid;
   opacity: 1;
+}
+
+@media (max-width: 320px) {
+  .header {
+    &__top {
+      padding: 0;
+
+      &-container {
+        padding: 0;
+        padding-right: 14px;
+      }
+    }
+    &__logo-link {
+      margin-right: auto;
+      width: 47px;
+      height: 22px;
+    }
+
+    &__btn {
+      display: none;
+    }
+
+    &__social {
+      &-list {
+        display: flex;
+      }
+
+      &-item:not(:last-child) {
+        margin-right: 10px;
+      }
+
+      &-link {
+      }
+    }
+  }
+  .burger {
+    display: block;
+
+    &__btn {
+      padding: 12px 14px;
+      margin: 0;
+      margin-right: 4px;
+      border: none;
+      border-radius: 0;
+    }
+
+    &__line {
+      &-1 {
+        display: block;
+        margin-bottom: 5.5px;
+        width: 12px;
+        height: 1.45px;
+        background-color: $color-white;
+      }
+      &-2 {
+        display: block;
+        margin-bottom: 5.5px;
+        width: 12px;
+        height: 1.45px;
+        background-color: $color-white;
+      }
+      &-3 {
+        display: block;
+        width: 12px;
+        height: 1.45px;
+        background-color: $color-white;
+      }
+    }
+  }
 }
