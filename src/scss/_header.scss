@@ -3,7 +3,7 @@
   padding: 0;
 
   &__top {
-    padding: 8px 0 6px;
+    padding: 8px 0 10px;
     background-color: $color-primary-red;
 
     &-container {
@@ -408,7 +408,104 @@
   opacity: 1;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 1024px) {
+  .header {
+    &__logo-link {
+      margin-right: auto;
+      width: 80px;
+      height: 35px;
+    }
+
+    &__nav {
+      &-link {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 998px) {
+  .header {
+    &__btn {
+      display: none;
+    }
+
+    &__social {
+      &-list {
+        display: flex;
+      }
+
+      &-item:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+
+    &__icon-text {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    &__top {
+      &-container {
+        padding: 0 30px;
+      }
+    }
+    &__logo-link {
+      margin-right: auto;
+      width: 47px;
+      height: 22px;
+    }
+
+    &__nav {
+      max-width: 300px;
+      &-link {
+        padding: 5px 5px;
+        font-size: 12px;
+        line-height: 100%;
+      }
+    }
+
+    &__chrono {
+      padding: 2px;
+      margin-right: 8px;
+      &-icon {
+        margin: 0;
+        width: 17px;
+        height: 17px;
+      }
+    }
+
+    &__my-speakers {
+      padding: 2px;
+      &-icon {
+        position: relative;
+        bottom: 1px;
+        margin-right: 11px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &__bottom {
+      padding-top: 17px;
+      padding-bottom: 12px;
+
+      &-container {
+        padding: 0 20px 0 25px;
+      }
+
+      &-link {
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
   .header {
     &__top {
       padding: 0;
@@ -425,6 +522,7 @@
     }
 
     &__nav {
+      margin: 0 auto;
       &-list {
         flex-direction: column;
       }
@@ -486,7 +584,7 @@
       background-color: $color-secondary-blue;
 
       &-container {
-        padding-right: 0;
+        padding: 0;
       }
 
       &-list {
