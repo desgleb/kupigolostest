@@ -37,6 +37,7 @@ svg {
   text-decoration: none;
   cursor: pointer;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
   transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
@@ -54,6 +55,7 @@ svg {
   box-shadow: none;
   cursor: pointer;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
     border-color 0.3s ease-in-out;
 }

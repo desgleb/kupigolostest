@@ -325,8 +325,8 @@ const deploy = () => {
         base: './app',
         buffer: false,
     })
-        .pipe(conn.newer('/sdp/public_html/')) //only upload newer files
-        .pipe(conn.dest('/sdp/public_html/'))
+        .pipe(conn.newer('/kupigolos/public_html/')) //only upload newer files
+        .pipe(conn.dest('/kupigolos/public_html/'))
 }
 
 exports.deploy = deploy;
