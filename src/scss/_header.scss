@@ -142,17 +142,38 @@
     }
 
     &-link {
+      position: relative;
       padding: 9px 0 12px;
-      border: 2px solid transparent;
-      border-radius: 0;
       color: $color-secondary-blue;
 
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        opacity: 0;
+        transform: scale(20%, 500%);
+        background-color: $color-primary-red;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+          background-color 0.3s ease-in-out;
+      }
+
       &:focus {
-        border-bottom-color: $color-secondary-blue;
+        &.header__bottom-link::after {
+          background-color: $color-secondary-blue;
+          opacity: 1;
+          transform: scale(100%, 100%);
+        }
       }
 
       &:hover {
-        border-bottom-color: $color-primary-red;
+        &.header__bottom-link::after {
+          background-color: $color-primary-red;
+          opacity: 1;
+          transform: scale(100%, 100%);
+        }
 
         & + .header__bottom-dropdown {
           display: grid;
@@ -162,7 +183,11 @@
 
       &:active {
         color: $color-primary-red;
-        border-bottom-color: $color-primary-red;
+        &.header__bottom-link::after {
+          background-color: $color-primary-red;
+          opacity: 1;
+          transform: scale(100%, 100%);
+        }
       }
     }
 
@@ -239,28 +264,53 @@
   }
 
   &__chrono {
+    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin-right: 33px;
     padding: 0;
-    border: 2px solid transparent;
-    border-radius: 0;
+    padding: 9px 0 12px;
     color: $color-secondary-blue;
     font-size: 14px;
     line-height: 19px;
 
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      opacity: 0;
+      transform: scale(20%, 500%);
+      background-color: $color-primary-red;
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+        background-color 0.3s ease-in-out;
+    }
+
     &:focus {
-      border-bottom-color: $color-secondary-blue;
+      &.header__chrono::after {
+        background-color: $color-secondary-blue;
+        opacity: 1;
+        transform: scale(100%, 100%);
+      }
     }
 
     &:hover {
-      border-bottom-color: $color-primary-red;
+      &.header__chrono::after {
+        opacity: 1;
+        transform: scale(100%, 100%);
+      }
     }
 
     &:active {
       color: $color-primary-red;
-      border-bottom-color: $color-primary-red;
+      &.header__chrono::after {
+        background-color: $color-primary-red;
+        opacity: 1;
+        transform: scale(100%, 100%);
+      }
 
       & .header__chrono-icon {
         fill: $color-primary-red;
@@ -279,27 +329,52 @@
   }
 
   &__my-speakers {
+    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 0;
-    border: 2px solid transparent;
-    border-radius: 0;
+    padding: 9px 0 12px;
     color: $color-secondary-blue;
     font-size: 14px;
     line-height: 19px;
 
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      opacity: 0;
+      transform: scale(20%, 500%);
+      background-color: $color-primary-red;
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+        background-color 0.3s ease-in-out;
+    }
+
     &:focus {
-      border-bottom-color: $color-secondary-blue;
+      &.header__my-speakers::after {
+        background-color: $color-secondary-blue;
+        opacity: 1;
+        transform: scale(100%, 100%);
+      }
     }
 
     &:hover {
-      border-bottom-color: $color-primary-red;
+      &.header__my-speakers::after {
+        opacity: 1;
+        transform: scale(100%, 100%);
+      }
     }
 
     &:active {
       color: $color-primary-red;
-      border-bottom-color: $color-primary-red;
+      &.header__my-speakers::after {
+        background-color: $color-primary-red;
+        opacity: 1;
+        transform: scale(100%, 100%);
+      }
 
       & .header__my-speakers-icon {
         fill: $color-primary-red;
@@ -554,6 +629,11 @@
     &__chrono {
       padding: 2px;
       margin-right: 8px;
+
+      &::after {
+        display: none;
+      }
+
       &-icon {
         margin: 0;
         width: 17px;
@@ -564,6 +644,11 @@
 
     &__my-speakers {
       padding: 2px;
+
+      &::after {
+        display: none;
+      }
+
       &-icon {
         position: relative;
         bottom: 1px;
@@ -614,6 +699,10 @@
         font-size: 12px;
         line-height: 18px;
         color: $color-white;
+
+        &::after {
+          display: none;
+        }
 
         &:focus {
           color: $color-secondary-blue;
