@@ -151,6 +151,11 @@
 
       &:hover {
         border-bottom-color: $color-primary-red;
+
+        & + .header__bottom-dropdown {
+          display: grid;
+          opacity: 1;
+        }
       }
 
       &:active {
@@ -166,7 +171,7 @@
       margin: 0;
       padding: 24px 7px 34px 24px;
       max-width: 540px;
-      display: none; // поменять на display:grid через JS при наведении и клике
+      display: none;
       grid-template-columns: repeat(2, 1fr);
       column-gap: 100px;
       list-style-type: none;
@@ -175,7 +180,12 @@
       border-bottom-left-radius: 8px;
       border-bottom-right-radius: 8px;
       opacity: 0;
-      transition: opacity .3s ease-in-out;
+      transition: opacity 0.3s ease-in-out;
+
+      &:hover {
+        display: grid;
+        opacity: 1;
+      }
 
       &-heading {
         font-family: $font-main;
