@@ -4,9 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const burgerMenu = document.querySelector('.burger__menu');
   const headerLogo = document.querySelector('.header__logo');
   const headerNav = document.querySelector('.header__nav');
-  const headerBottom = document.querySelector('.header__bottom');
   const headerBottomList = document.querySelector('.header__bottom-list');
-  const headerBottomItems = document.querySelectorAll('.header__bottom-item');
   const headerLinks = document.querySelectorAll('.header__bottom-link');
   const headerDropdowns = document.querySelectorAll('.header__bottom-dropdown');
   const headerDropdownsLists = document.querySelectorAll('.header__bottom-dropdown-list');
@@ -17,15 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // проверка ширины экрана
   function widthCheck() {
     let bodyWidth = document.body.clientWidth;
-    let windowWidth = window.innerWidth;
 
-    if (bodyWidth <= 320) {
+    if (bodyWidth <= 500) {
       burgerMenu.append(headerNav);
       headerBottomList.append(chrono);
       headerBottomList.append(mySpeakers);
     }
 
-    if (bodyWidth > 320) {
+    if (bodyWidth > 500) {
       headerLogo.after(headerNav);
       headerBottomList.after(chrono);
       headerBottomList.after(mySpeakers);
@@ -34,8 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    console.log(bodyWidth);
-    console.log(windowWidth);
   }
 
   widthCheck();
@@ -59,12 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault(); // если сама ссылка в меню будет вести на другую страницу, эту строку удалить
 
       let target = e.target;
-
-      // if (document.body.clientWidth <= 320) {
-      //   console.log(headerBottom.offsetHeight);
-      //   console.log(headerBottom.offsetTop);
-      //   console.log()
-      // }
 
       headerDropdowns.forEach(dd => {
         dd.classList.remove(visibleClass);
@@ -111,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   });
 
+  // скрываем выпадашку при уводе с нее мышки
   headerDropdowns.forEach(dd => {
     const visibleClass = 'dropdown--visible';
     dd.addEventListener('mouseout', () => {
@@ -118,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
+  // открытие и закрытие меню бургера
   burgerBtn.addEventListener('click', () => {
     burgerMenu.classList.add('burger__menu--visible');
   });
@@ -144,19 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
       heading.classList.add('dropdown-heading-is-opened');
     });
   });
-
-  // // скрытые карточки в Витрине
-  // showcaseBtn.addEventListener('click', () => {
-  //   showcaseCards.forEach(card => {
-  //     if (card.classList.contains(showcaseHiddenClass)) {
-  //       card.style.display = 'block';
-  //       setTimeout(() => {
-  //         card.classList.remove(showcaseHiddenClass);
-  //       }, 300);
-  //       showcaseBtn.style.display = 'none';
-  //     }
-  //   });
-  // });
 
   window.addEventListener('resize', () => {
     widthCheck();
