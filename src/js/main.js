@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const burgerBtn = document.querySelector('.burger__btn');
+  const burgerClose = document.querySelector('.burger__menu-close');
   const burgerMenu = document.querySelector('.burger__menu');
   const headerLogo = document.querySelector('.header__logo');
   const headerNav = document.querySelector('.header__nav');
@@ -95,6 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
+  burgerBtn.addEventListener('click', ()=> {
+    burgerMenu.classList.add('burger__menu--visible');
+  });
+
+  burgerClose.addEventListener('click', () => {
+    burgerMenu.classList.remove('burger__menu--visible');
+  });
 
   window.addEventListener('resize', () => {
     widthCheck();

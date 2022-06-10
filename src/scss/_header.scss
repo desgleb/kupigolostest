@@ -316,9 +316,79 @@
 
 .burger {
   display: none;
+  position: relative;
+
+  &__btn {
+    padding: 12px 14px;
+    margin: 0;
+    margin-right: 4px;
+    border: none;
+    border-radius: 0;
+  }
+
+  &__line {
+    &-1 {
+      display: block;
+      margin-bottom: 5.5px;
+      width: 12px;
+      height: 1.45px;
+      background-color: $color-white;
+    }
+    &-2 {
+      display: block;
+      margin-bottom: 5.5px;
+      width: 12px;
+      height: 1.45px;
+      background-color: $color-white;
+    }
+    &-3 {
+      display: block;
+      width: 12px;
+      height: 1.45px;
+      background-color: $color-white;
+    }
+  }
 
   &__menu {
     display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 16px;
+    width: 100vw;
+    height: 100vh;
+    background-color: $color-primary-red;
+    transform: translateX(-101%);
+    z-index: 10;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &--visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    &-close {
+      padding: 12px 14px;
+      margin: 0;
+      margin-bottom: 50px;
+
+      &-1 {
+        display: block;
+        width: 20px;
+        height: 1.45px;
+        background-color: $color-white;
+        transform: rotateZ(45deg) translateY(1px);
+      }
+
+      &-2 {
+        display: block;
+        width: 20px;
+        height: 1.45px;
+        background-color: $color-white;
+
+        transform: rotateZ(-45deg) translateY(-1px);
+      }
+    }
   }
 }
 
@@ -343,6 +413,21 @@
       height: 22px;
     }
 
+    &__nav {
+      &-list {
+        flex-direction: column;
+      }
+
+      &-item {
+        margin-bottom: 15px;
+      }
+
+      &-link {
+        font-size: 21px;
+        line-height: 100%;
+      }
+    }
+
     &__btn {
       display: none;
     }
@@ -355,43 +440,13 @@
       &-item:not(:last-child) {
         margin-right: 10px;
       }
-
-      &-link {
-      }
     }
   }
   .burger {
     display: block;
 
-    &__btn {
-      padding: 12px 14px;
-      margin: 0;
-      margin-right: 4px;
-      border: none;
-      border-radius: 0;
-    }
-
-    &__line {
-      &-1 {
-        display: block;
-        margin-bottom: 5.5px;
-        width: 12px;
-        height: 1.45px;
-        background-color: $color-white;
-      }
-      &-2 {
-        display: block;
-        margin-bottom: 5.5px;
-        width: 12px;
-        height: 1.45px;
-        background-color: $color-white;
-      }
-      &-3 {
-        display: block;
-        width: 12px;
-        height: 1.45px;
-        background-color: $color-white;
-      }
+    &__menu {
+      display: block;
     }
   }
 }
