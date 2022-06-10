@@ -2,10 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const headerLinks = document.querySelectorAll('.header__bottom-link');
   const headerDropdowns = document.querySelectorAll('.header__bottom-dropdown');
 
+
+  // скрываем все выпадашки в шапке при клике в других местах
   document.body.addEventListener('click', e => {
     let target = e.target;
     headerLinks.forEach(link => {
-      // let linkParent = link.parentElement;
       headerDropdowns.forEach(dd => {
         if (target !== link && target !== dd) {
           dd.classList.remove('dropdown--visible');
@@ -14,8 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
+  // по клику показываем и скрываем выпадашку в шапке
   headerLinks.forEach(link => {
     link.addEventListener('click', (e) => {
+      e.preventDefault(); // если сама ссылка в меню будет вести на другую страницу, эту строку удалить
+
       headerDropdowns.forEach(dd => {
         dd.classList.remove(visibleClass);
       });
@@ -34,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    // по наведению указателя мыши показываем и скрываем выпадашку в шапке
     link.addEventListener('mouseover', (e) => {
       headerDropdowns.forEach(dd => {
         dd.classList.remove(visibleClass);
